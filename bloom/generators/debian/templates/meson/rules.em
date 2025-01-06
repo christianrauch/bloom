@@ -32,7 +32,8 @@ override_dh_auto_configure:
 		--prefix="@(InstallationPrefix)" \
 		--cmake-prefix-path="@(InstallationPrefix)" \
 		--libdir=lib \
-		--libexecdir=lib
+		--libexecdir=lib \
+		--wrap-mode=default
 
 override_dh_auto_build:
 	if [ -f "@(InstallationPrefix)/setup.sh" ]; then . "@(InstallationPrefix)/setup.sh"; fi && \
